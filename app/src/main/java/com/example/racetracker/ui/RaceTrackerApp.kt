@@ -66,7 +66,7 @@ fun RaceTrackerApp() {
         RaceParticipant(name = "Player 1", progressIncrement = 1)
     }
     val playerTwo = remember {
-        RaceParticipant(name = "Player 2", progressIncrement = 0)
+        RaceParticipant(name = "Player 2", progressIncrement = 2)
     }
     var raceInProgress by remember { mutableStateOf(false) }
 
@@ -80,9 +80,7 @@ fun RaceTrackerApp() {
         launch{
             playerTwo.run()
         }
-        launch{
-        playerTwo.run()
-        }
+
     }
         raceInProgress = false
 
