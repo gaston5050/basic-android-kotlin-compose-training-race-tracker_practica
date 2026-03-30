@@ -1,0 +1,261 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes. Error detail: G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   This process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3925), pid=18032, tid=15184
+#
+# JRE version:  (21.0.9) (build )
+# Java VM: OpenJDK 64-Bit Server VM (21.0.9+-14649483-b1163.86, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Djava.awt.headless=true -Djava.library.path=C:\Program Files\Android\Android Studio\jbr\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files\Common files\EFI;C:\Program Files\Fiery\Components\Common files;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Google\Google Apps Sync\;C:\Users\gastona\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\gastona\AppData\Local\Programs\Python\Python313\;C:\Users\gastona\AppData\Local\Programs\Python\Launcher\;C:\Users\gastona\AppData\Local\Microsoft\WindowsApps;C:\Users\gastona\.dotnet\tools;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\gastona\AppData\Local\GitHubDesktop\bin;C:\Program Files\apache-maven-3.9.6-bin\apache-maven-3.9.6\Bin;C:\Program Files\Java\jdk1.8.0_301\Bin;D:\Programas\Microsoft VS Code\bin;D:\Programas\Mongo\;C:\php;C:\Users\gastona\AppData\Roaming\npm;.;D:\proyectos_android\basic-android-kotlin-compose-training-race-tracker_practica\app\src\testDebug\jniLibs;D:\proyectos_android\basic-android-kotlin-compose-training-race-tracker_practica\app\src\test\jniLibs -Dorg.gradle.internal.worker.tmpdir=D:\proyectos_android\basic-android-kotlin-compose-training-race-tracker_practica\app\build\tmp\testDebugUnitTest\work --add-opens=java.base/java.io=ALL-UNNAMED -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=AR -Duser.language=es -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 3'
+
+Host: Intel(R) Core(TM) i5-6400 CPU @ 2.70GHz, 4 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+Time: Fri Mar 27 12:04:50 2026 Hora estándar de Argentina elapsed time: 0.012731 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002ac0affb960):  JavaThread "Unknown thread" [_thread_in_vm, id=15184, stack(0x000000ee3fe00000,0x000000ee3ff00000) (1024K)]
+
+Stack: [0x000000ee3fe00000,0x000000ee3ff00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6d6c99]
+V  [jvm.dll+0x866b83]
+V  [jvm.dll+0x86919e]
+V  [jvm.dll+0x869883]
+V  [jvm.dll+0x280776]
+V  [jvm.dll+0x6d3555]
+V  [jvm.dll+0x6c6bea]
+V  [jvm.dll+0x3587fb]
+V  [jvm.dll+0x360476]
+V  [jvm.dll+0x3b2646]
+V  [jvm.dll+0x3b2918]
+V  [jvm.dll+0x32af0c]
+V  [jvm.dll+0x32bbfb]
+V  [jvm.dll+0x82e839]
+V  [jvm.dll+0x3bf818]
+V  [jvm.dll+0x8179d8]
+V  [jvm.dll+0x453cbe]
+V  [jvm.dll+0x455421]
+C  [jli.dll+0x52ab]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17374]
+C  [ntdll.dll+0x4cc91]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffa1c38b988, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000002ac0d22c7b0 WorkerThread "GC Thread#0"                     [id=20328, stack(0x000000ee3ff00000,0x000000ee40000000) (1024K)]
+  0x000002ac0d231810 ConcurrentGCThread "G1 Main Marker"            [id=21220, stack(0x000000ee40000000,0x000000ee40100000) (1024K)]
+  0x000002ac0d2329c0 WorkerThread "G1 Conc#0"                       [id=22184, stack(0x000000ee40100000,0x000000ee40200000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa1bb7dee7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffa1c3f8790] Heap_lock - owner thread: 0x000002ac0affb960
+
+Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+ Metaspace       used 0K, committed 0K, reserved 0K
+  class space    used 0K, committed 0K, reserved 0K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+
+Card table byte_map: [0x000002ac1f360000,0x000002ac1f460000] _byte_map_base: 0x000002ac1ec60000
+
+Marking Bits: (CMBitMap*) 0x000002ac0d22cdc0
+ Bits: [0x000002ac1f460000, 0x000002ac1fc60000)
+
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.008 Loaded shared library C:\Program Files\Android\Android Studio\jbr\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Memory protections (0 events):
+No events
+
+Nmethod flushes (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff76eb90000 - 0x00007ff76eb9a000 	C:\Program Files\Android\Android Studio\jbr\bin\java.exe
+0x00007fface210000 - 0x00007fface408000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffacd280000 - 0x00007ffacd342000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffacbbb0000 - 0x00007ffacbea6000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffacba20000 - 0x00007ffacbb20000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffaa4ed0000 - 0x00007ffaa4ee8000 	C:\Program Files\Android\Android Studio\jbr\bin\jli.dll
+0x00007ffaa6930000 - 0x00007ffaa694b000 	C:\Program Files\Android\Android Studio\jbr\bin\VCRUNTIME140.dll
+0x00007ffacd070000 - 0x00007ffacd211000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffac16d0000 - 0x00007ffac196b000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256\COMCTL32.dll
+0x00007ffacbeb0000 - 0x00007ffacbed2000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffacc3e0000 - 0x00007ffacc47e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffacc200000 - 0x00007ffacc22b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffacc0b0000 - 0x00007ffacc1c9000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffacbf90000 - 0x00007ffacc02d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffacc870000 - 0x00007ffacc89f000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffaaa430000 - 0x00007ffaaa43c000 	C:\Program Files\Android\Android Studio\jbr\bin\vcruntime140_1.dll
+0x00007ffa98c10000 - 0x00007ffa98c9d000 	C:\Program Files\Android\Android Studio\jbr\bin\msvcp140.dll
+0x00007ffa1b840000 - 0x00007ffa1c4d6000 	C:\Program Files\Android\Android Studio\jbr\bin\server\jvm.dll
+0x00007ffacd430000 - 0x00007ffacd4e1000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffacdfe0000 - 0x00007fface07f000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffacdec0000 - 0x00007ffacdfe0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffacc1d0000 - 0x00007ffacc1f7000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ffacc510000 - 0x00007ffacc57b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffacb6d0000 - 0x00007ffacb71b000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffac0be0000 - 0x00007ffac0c07000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffac5270000 - 0x00007ffac527a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffacb6b0000 - 0x00007ffacb6c2000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffac9400000 - 0x00007ffac9412000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffaaa240000 - 0x00007ffaaa24a000 	C:\Program Files\Android\Android Studio\jbr\bin\jimage.dll
+0x00007ffac08d0000 - 0x00007ffac0ad1000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffaacd40000 - 0x00007ffaacd74000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffacbb20000 - 0x00007ffacbba2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffaa4e70000 - 0x00007ffaa4e90000 	C:\Program Files\Android\Android Studio\jbr\bin\java.dll
+
+JVMTI agents: none
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Android\Android Studio\jbr\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.6456_none_60b8a6cb71f64256;C:\Program Files\Android\Android Studio\jbr\bin\server
+
+VM Arguments:
+jvm_args: -Djava.awt.headless=true -Djava.library.path=C:\Program Files\Android\Android Studio\jbr\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files\Common files\EFI;C:\Program Files\Fiery\Components\Common files;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Google\Google Apps Sync\;C:\Users\gastona\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\gastona\AppData\Local\Programs\Python\Python313\;C:\Users\gastona\AppData\Local\Programs\Python\Launcher\;C:\Users\gastona\AppData\Local\Microsoft\WindowsApps;C:\Users\gastona\.dotnet\tools;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\gastona\AppData\Local\GitHubDesktop\bin;C:\Program Files\apache-maven-3.9.6-bin\apache-maven-3.9.6\Bin;C:\Program Files\Java\jdk1.8.0_301\Bin;D:\Programas\Microsoft VS Code\bin;D:\Programas\Mongo\;C:\php;C:\Users\gastona\AppData\Roaming\npm;.;D:\proyectos_android\basic-android-kotlin-compose-training-race-tracker_practica\app\src\testDebug\jniLibs;D:\proyectos_android\basic-android-kotlin-compose-training-race-tracker_practica\app\src\test\jniLibs -Dorg.gradle.internal.worker.tmpdir=D:\proyectos_android\basic-android-kotlin-compose-training-race-tracker_practica\app\build\tmp\testDebugUnitTest\work --add-opens=java.base/java.io=ALL-UNNAMED -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=AR -Duser.language=es -Duser.variant -ea 
+java_command: worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 3'
+java_class_path (initial): C:\\Users\\gastona\\.gradle\\caches\\8.13\\workerMain\\gradle-worker.jar;D:\\proyectos_android\\basic-android-kotlin-compose-training-race-tracker_practica\\app\\build\\tmp\\kotlin-classes\\debugUnitTest;D:\\proyectos_android\\basic-android-kotlin-compose-training-race-tracker_practica\\app\\build\\intermediates\\java_res\\debugUnitTest\\processDebugUnitTestJavaRes\\out;D:\\proyectos_android\\basic-android-kotlin-compose-training-race-tracker_practica\\app\\build\\intermediates\\runtime_app_classes_jar\\debug\\bundleDebugClassesToRuntimeJar\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\e9d1fed71ba294a87ddb07917c4b5cfa\\transformed\\activity-ktx-1.9.3-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\9d49faedee04221953b81ef77911a4e2\\transformed\\activity-1.9.3-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\389bdaf01be3ab0993a76bf23b5ddb7e\\transformed\\material3-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\2cb3b4a87ef309479d153e1c1c736a79\\transformed\\material-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\d44635e0047bca7944487a1637dc77f5\\transformed\\material-ripple-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\a89ce1ea42330953db1087a032fb3328\\transformed\\ui-tooling-data-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\d6af3c5862dcb36e4ab388f059e15ab4\\transformed\\foundation-layout-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\3e4528ded02b25b7c1087089fd5cfef0\\transformed\\foundation-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\18ce9455a074b636e64f7b90ed33a10a\\transformed\\animation-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\7a7cb8ae58568f0d3b1818d777c0307d\\transformed\\animation-core-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\bde0cd9b007aa45ebb8ec44b659216e7\\transformed\\ui-unit-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\6ae3d0319a5a5ddda3a956d05d062899\\transformed\\ui-geometry-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\0bc806fe887afa27d69cd9e8616442f0\\transformed\\ui-util-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\4048d3e7841d96e068c46e2bacef0b2e\\transformed\\ui-text-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\59d6d6dd248e4ea6188b36bea5d2b125\\transformed\\ui-test-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\f93a907e14cf6c3a6ee925b07d3a166e\\transformed\\ui-tooling-preview-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\49580c00f12bd0de157c381da6c00b3e\\transformed\\ui-graphics-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1b7021f8122b9456d15f42334facfb76\\transformed\\ui-tooling-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\a29d8c52680b58dc18e3ea5b3e9367d9\\transformed\\activity-compose-1.9.3-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\c7874f69b112ef5fb025981e82d0d320\\transformed\\material-icons-extended-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\9b2497a0841ac336bd6717d4fa796d6a\\transformed\\material-icons-core-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\199d62a6551eb1fddce468384ff6bb7a\\transformed\\runtime-annotation-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1ef6c1a8945757b55a17d5e8468ded72\\transformed\\runtime-retain-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\7e0de90e1649468e991ae7691d25eaa0\\transformed\\emoji2-1.4.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\c770fa412e82ec74c484569ee3b6bdaf\\transformed\\autofill-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1fbb3d82039c1ebfad9917a035f09f83\\transformed\\transition-1.6.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\0b75eab2dec3a4252e21b2e17ffc8e1b\\transformed\\window-core-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\21f9c9467712ada2ca894b7b61d0f362\\transformed\\window-1.5.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\8f60f9d168e06b14db6803639b8c0c67\\transformed\\graphics-path-1.0.1-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\48d2f167a7fc1bd36f12e73c0532bc24\\transformed\\customview-poolingcontainer-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\29f90085c90f803e41bea069898e33a7\\transformed\\core-ktx-1.16.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\abbd9e1a887239225eccadac825a82cc\\transformed\\dynamicanimation-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\906b13278bd8bb6bf23c6e67c919c957\\transformed\\legacy-support-core-utils-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\cc7503059093307c5a47a440ca93689c\\transformed\\loader-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\ebcba3a6b06c2911fc38c8e757f4cc80\\transformed\\core-1.16.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\cb7defc0c9530ff06ef9e6891442cd11\\transformed\\junit-1.1.5-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\7cc5e92d342ebaab0e4bf0471e22c42c\\transformed\\espresso-core-3.5.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\e2daaed6427f9dfc4bb8363ee4ef5422\\transformed\\core-1.5.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1bd2ebff0fcef6fe5da3c4168570e733\\transformed\\lifecycle-livedata-core-ktx-2.9.4-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\7f10a2d5e1674dda78ef9f212449d16d\\transformed\\lifecycle-livedata-core-2.9.4-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\d1caa0a0580142d8d9ad9c63410f9361\\transformed\\lifecycle-viewmodel-2.9.4-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\e9e47954f08efe2ac4fb8b17d68e5743\\transformed\\lifecycle-viewmodel-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\b4a884badf458401921c6f19a4aa10c1\\transformed\\lifecycle-livedata-2.9.4-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\androidx.lifecycle\\lifecycle-common-jvm\\2.9.4\\ab739bccdb3541983385af169565c7c035d897e7\\lifecycle-common-jvm-2.9.4.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\acdf1d2ee34310df1381f0ff676f90a4\\transformed\\lifecycle-runtime-ktx-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\f71bec8ac975f777da121c640ef88e63\\transformed\\lifecycle-runtime-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\4bcc13f6c90dc52d4c289ffbe77d1189\\transformed\\lifecycle-viewmodel-ktx-2.9.4-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\f81d00aa1a479b838ce24b99d1597fee\\transformed\\lifecycle-process-2.9.4-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\androidx.lifecycle\\lifecycle-common-java8\\2.9.4\\86a8e6b9d0ba0c964fdc7223a38b6ce74bcb24dd\\lifecycle-common-java8-2.9.4.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\ec74d4b34cfdb3c9162152fe3a15e7d5\\transformed\\lifecycle-viewmodel-savedstate-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\12729bdb85d9dde887d00bdd39b42477\\transformed\\savedstate-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\a2c8edcb76a5941c9093204a38c300a2\\transformed\\savedstate-ktx-1.3.2-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\8db7eb908a64130f62d74890f897a950\\transformed\\savedstate-compose-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\83776050ec8eaa4f756251b8735b4136\\transformed\\runtime-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\0e32fa2adae4ea4bb16580da1dcf215a\\transformed\\runtime-saveable-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\af06f537abfb4832d7c6c4cd6b23ed43\\transformed\\lifecycle-runtime-compose-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1f8d39a20097b9caac575d0f2a4333a7\\transformed\\lifecycle-viewmodel-compose-release-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\b60850071322ed40f5957ac4a9ca57f6\\transformed\\ui-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\9b40fdecf242b0d1d3e52d2852fbdc8d\\transformed\\ui-test-manifest-1.10.6-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\33735aa1f8ac125eb76298d3a1792903\\transformed\\ui-test-junit4-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\b45775aad81965d77230ef93b79ec000\\transformed\\runner-1.5.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\junit\\junit\\4.13.2\\8ac9e16d933b6fb43bc7f576336b8f4d7eb5ba12\\junit-4.13.2.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\86d8daa4b52a1f167a50b8ebb22fd0c8\\transformed\\storage-1.4.2-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\358af7c71d8af81ad58472d957a1cf45\\transformed\\monitor-1.6.1-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\e67653fc71939f6bd26f751bc703adca\\transformed\\annotation-1.0.1-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\250c0feb5832317be1e06ef990b3bc78\\transformed\\annotation-experimental-1.4.1-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-coroutines-test-jvm\\1.9.0\\7227c0691a604e2b32f525b628014dda862d0eed\\kotlinx-coroutines-test-jvm-1.9.0.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-coroutines-core-jvm\\1.9.0\\9beade4c1c1569e4f36cbd2c37e02e3e41502601\\kotlinx-coroutines-core-jvm-1.9.0.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-coroutines-android\\1.9.0\\6cf3b8df5a2ce8c6b0dffe55657a827c405ee2fe\\kotlinx-coroutines-android-1.9.0.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\36c832a1cbe4b0c02569567d2eb30806\\transformed\\versionedparcelable-1.1.1-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\androidx.collection\\collection-ktx\\1.5.0\\27c78a926a16a1bf792b2285cf2834e8caae4a07\\collection-ktx-1.5.0.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\androidx.collection\\collection-jvm\\1.5.0\\7ba2c69414d46ebc2dd76598bdd0a75c54281a57\\collection-jvm-1.5.0.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\4fd13e391f4a350d9bd90a7445ce3da0\\transformed\\core-viewtree-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\707affcbc44553d40d3b52c50f78a455\\transformed\\profileinstaller-1.4.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\androidx.concurrent\\concurrent-futures\\1.1.0\\50b7fb98350d5f42a4e49704b03278542293ba48\\concurrent-futures-1.1.0.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\d28a6f839b725768da446764035139b5\\transformed\\startup-runtime-1.1.1-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\875f43ed1688219e74351609cc273bc4\\transformed\\tracing-1.2.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\f7a88ff60f3b8d03994ed35f608560bc\\transformed\\interpolator-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\0e858fd80a394db4df07f2e496b82040\\transformed\\documentfile-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\19bc9888112b3d3f44238191f5e56864\\transformed\\localbroadcastmanager-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\4641ca3cc6d74f21e7886b45738cb52b\\transformed\\print-1.0.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\03f19afb256a8649be8a9a113eab7711\\transformed\\core-runtime-2.2.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\androidx.arch.core\\core-common\\2.2.0\\5e1b8b81dfd5f52c56a8d53b18ca759c19a301f3\\core-common-2.2.0.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\androidx.annotation\\annotation-jvm\\1.9.1\\b17951747e38bf3986a24431b9ba0d039958aa5f\\annotation-jvm-1.9.1.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlinx\\kotlinx-serialization-core-jvm\\1.7.3\\1f226780b845ff9206474c05159245d861556249\\kotlinx-serialization-core-jvm-1.7.3.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains.kotlin\\kotlin-stdlib\\2.1.0\\85f8b81009cda5890e54ba67d64b5e599c645020\\kotlin-stdlib-2.1.0.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.hamcrest\\hamcrest-integration\\1.3\\5de0c73fef18917cd85d0ab70bb23818685e4dfd\\hamcrest-integration-1.3.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.hamcrest\\hamcrest-library\\1.3\\4785a3c21320980282f9f33d0d1264a69040538f\\hamcrest-library-1.3.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.hamcrest\\hamcrest-core\\1.3\\42a25dc3219429f0e5d060061f71acb49bf010a0\\hamcrest-core-1.3.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.jetbrains\\annotations\\23.0.0\\8cc20c07506ec18e0834947b84a864bfc094484e\\annotations-23.0.0.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\org.jspecify\\jspecify\\1.0.0\\7425a601c1c7ec76645a78d22b8c6a627edee507\\jspecify-1.0.0.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\com.google.guava\\listenablefuture\\1.0\\c949a840a6acbc5268d088e47b04177bf90b3cad\\listenablefuture-1.0.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\d539836efeb13a3d9e4129adb6ea31aa\\transformed\\espresso-idling-resource-3.5.0-runtime.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\com.google.code.findbugs\\jsr305\\2.0.2\\516c03b21d50a644d538de0f0369c620989cd8f0\\jsr305-2.0.2.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\com.squareup\\javawriter\\2.1.1\\67ff45d9ae02e583d0f9b3432a5ebbe05c30c966\\javawriter-2.1.1.jar;C:\\Users\\gastona\\.gradle\\caches\\modules-2\\files-2.1\\javax.inject\\javax.inject\\1\\6975da39a7040257bd51d21a231b76c915872d38\\javax.inject-1.jar;D:\\proyectos_android\\basic-android-kotlin-compose-training-race-tracker_practica\\app\\build\\intermediates\\java_res\\debug\\processDebugJavaRes\\out;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1f5ca517ffc63a474466661bb2bec87a\\transformed\\activity-ktx-1.9.3\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\abfa4b6cb00a80feb6d969fd0743b819\\transformed\\activity-1.9.3\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\ccc752bddc52f50b5a3119d7bc0b2c60\\transformed\\material3-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1d084b47b31234389f5e7a282c83fddb\\transformed\\material-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\34bcf4bfc14ef85c548a69bca42aa4ec\\transformed\\material-ripple-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\e8fef2068f5df8e18414e3f879f78b8a\\transformed\\ui-tooling-data\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1fb5d4b9c5046787ef15129179ee8429\\transformed\\foundation-layout\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\649be5e2757158f53f94db65dd1d717b\\transformed\\foundation\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\41b43b7d897ad6854fab9e2ced4b580c\\transformed\\animation\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\48459f6735fc58a4e7a19a1ed0cee1d7\\transformed\\animation-core\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\89fb114362a57c9497139b0ad61de4a1\\transformed\\ui-unit\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\de1d9ae7ad424272e7f6e8945b903ce6\\transformed\\ui-geometry\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\886262d436f7710135aa28d6fb09111f\\transformed\\ui-util\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\6115644573c2281d2d73aac7c39460d4\\transformed\\ui-text\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\29adf61c7a509dedb9e09fd0af825bd4\\transformed\\ui-test\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\8b6bf408d3b0887048e9df0350ff91ec\\transformed\\ui-tooling-preview\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\3eb7832144b0696117aa63b65370fb37\\transformed\\ui-graphics\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\5e1a2946657f2a480f013bdda597af23\\transformed\\ui-tooling\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\aab3758b298f04f73d4234d536d5cf3a\\transformed\\activity-compose-1.9.3\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\dff6ad1f26027cecf432649f6fb72232\\transformed\\material-icons-extended-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\44cbd80073962955e439116c7d884dbd\\transformed\\material-icons-core-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\b38d29557d3b03c964aeef632a538069\\transformed\\runtime-annotation\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\89db73719ec37e482a4ced21ba94620e\\transformed\\runtime-retain\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\30f1e037f0bfc7dd3ae6cb03044b2ff7\\transformed\\emoji2-1.4.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\30f1e037f0bfc7dd3ae6cb03044b2ff7\\transformed\\emoji2-1.4.0\\jars\\libs\\repackaged.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\998b8520c5a0ef088b09ad01dc24cf8c\\transformed\\autofill-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\e5ba05d1c26123146f14bff16ed4604e\\transformed\\transition-1.6.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\2e44bd43c4dfb0f08e6bf41ad3a9f6c8\\transformed\\window-core\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\88fdfa38046999b71339a4d0ca3289be\\transformed\\window-1.5.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\ea7e9201f8cd3920d44836756c0d3f93\\transformed\\graphics-path-1.0.1\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\67e31f829a9d5a0d47d53bd40f222f83\\transformed\\customview-poolingcontainer-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\9a2cf1ca37d6e89c965de9e729716e55\\transformed\\core-ktx-1.16.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\7bd7bc408014022bc0b505bb9bb792be\\transformed\\dynamicanimation-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\79124af33815509c6e10a18b91fbe84a\\transformed\\legacy-support-core-utils-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\1ac3e5e6e076edc46b210948fcb46b28\\transformed\\loader-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\8aadf44abbfd0bb972d4eeb33530031c\\transformed\\core-1.16.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\77250b38138dfb6221207e6218b3e58a\\transformed\\junit-1.1.5\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\496632ef157b51e9836a87cbbb5efa85\\transformed\\espresso-core-3.5.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\f24ed4d43a8976c7bd988b5c6c7550b8\\transformed\\core-1.5.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\42a4856ba4d90f846e4aa7c64380538f\\transformed\\lifecycle-livedata-core-ktx-2.9.4\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\dc6776ce2684f42bea146a650a0888cb\\transformed\\lifecycle-livedata-core-2.9.4\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\8f751f321f2c10dd36204241c33c12e6\\transformed\\lifecycle-viewmodel-2.9.4\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\bf07705c6a9fc394369fcc1fda418514\\transformed\\lifecycle-viewmodel-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\25fa56b833ed17f3eea7f0dab1563c51\\transformed\\lifecycle-livedata-2.9.4\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\7b3b9569d6d740521d679c4e86b270aa\\transformed\\lifecycle-runtime-ktx\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\e33603387f29734d85e2a99ee245ee2e\\transformed\\lifecycle-runtime-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\d881876ef88c205d63f0cd5d237613ae\\transformed\\lifecycle-viewmodel-ktx-2.9.4\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\36cdfd3beb23cc76d95f133b9f87895f\\transformed\\lifecycle-process-2.9.4\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\0c6a08ef04eb08c8c55f8f3cdfc36979\\transformed\\lifecycle-viewmodel-savedstate-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\d9a3cae561e847011a476df3420d7b1c\\transformed\\savedstate-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\488ff5b51f20fe44535bee6f8d55e015\\transformed\\savedstate-ktx-1.3.2\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\d2ae3ea5cb22dfe89bd566cae75b08b2\\transformed\\savedstate-compose\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\3f4c7d274a81d70acbc7df092e34112a\\transformed\\runtime\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\2ddcbb99ed1ff7c57054e3bfd9c82489\\transformed\\runtime-saveable\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\7ca9cbfc9843995bd227cfb3842dacd5\\transformed\\lifecycle-runtime-compose-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\48b3631c06ce6fda5a5a307bc68a795c\\transformed\\lifecycle-viewmodel-compose-release\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\3092013a8371faf77d85c6fa73bf7e01\\transformed\\ui\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\2bc17783c8f91f61116b08de5858777b\\transformed\\ui-test-manifest-1.10.6\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\4ad4c757286f3d4ce75998861e694f4c\\transformed\\ui-test-junit4\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\a3b471f85e0b67a1915577fba73fa262\\transformed\\runner-1.5.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\3917de76d7678c72c3ba819f89bbb371\\transformed\\storage-1.4.2\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\6d6b09c19e5decbc004f9284b5b6cb14\\transformed\\monitor-1.6.1\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\ba74b1658a4e2f4d44c703c40043fcae\\transformed\\annotation-1.0.1\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\32a0535939377e3a9b38cfb719f73a82\\transformed\\annotation-experimental-1.4.1\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\c157ebb6d69b546d3834622050481c54\\transformed\\versionedparcelable-1.1.1\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\6f0820363c381d979c9fd785488b27af\\transformed\\core-viewtree-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\c9546103a3ac1dd6a6c5b34ab2713e4f\\transformed\\profileinstaller-1.4.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\b6c6b043ae0182e0e8f2e4a82a6dc06c\\transformed\\startup-runtime-1.1.1\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\f9b47b2ab67fa1b869d70158ac1ecc9b\\transformed\\tracing-1.2.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\ca847b984fbdf44ec5dc5c615f09e7d4\\transformed\\interpolator-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\446246768fe1ee1d5b7cbc4f1b1ad6e1\\transformed\\documentfile-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\586a74ec644352ebdcad099d816eaf14\\transformed\\localbroadcastmanager-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\300e8f8eca56865821bbfba2fe7383f8\\transformed\\print-1.0.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\68c555210884e3bff722d72af2850ea4\\transformed\\core-runtime-2.2.0\\jars\\classes.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\ee4516e4381abc42610a0f7db3b91706\\transformed\\espresso-idling-resource-3.5.0\\jars\\classes.jar;D:\\proyectos_android\\basic-android-kotlin-compose-training-race-tracker_practica\\app\\build\\intermediates\\compile_and_runtime_not_namespaced_r_class_jar\\debug\\processDebugResources\\R.jar;C:\\Users\\gastona\\.gradle\\caches\\8.13\\transforms\\ddc01d67fa5e7490f643e90415acc9dc\\transformed\\android.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 536870912                                 {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5832780                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122912730                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122912730                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 536870912                              {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Release file:
+<release file has not been read>
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_301
+PATH=C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files\Common files\EFI;C:\Program Files\Fiery\Components\Common files;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\Google\Google Apps Sync\;C:\Users\gastona\AppData\Local\Programs\Python\Python313\Scripts\;C:\Users\gastona\AppData\Local\Programs\Python\Python313\;C:\Users\gastona\AppData\Local\Programs\Python\Launcher\;C:\Users\gastona\AppData\Local\Microsoft\WindowsApps;C:\Users\gastona\.dotnet\tools;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Azure Data Studio\bin;C:\Users\gastona\AppData\Local\GitHubDesktop\bin;C:\Program Files\apache-maven-3.9.6-bin\apache-maven-3.9.6\Bin;C:\Program Files\Java\jdk1.8.0_301\Bin;D:\Programas\Microsoft VS Code\bin;D:\Programas\Mongo\;C:\php;C:\Users\gastona\AppData\Roaming\npm
+USERNAME=gastona
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+TMP=C:\Users\gastona\AppData\Local\Temp
+TEMP=C:\Users\gastona\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+JNI global refs:
+JNI global refs: 0, weak refs: 0
+
+JNI global refs memory usage: 0, weak refs: 0
+
+Process memory usage:
+Resident Set Size: 10764K (0% of 16687540K total physical memory with 2832932K free physical memory)
+
+OOME stack traces (most recent first):
+Classloader memory used:
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.5915)
+OS uptime: 2 days 1:47 hours
+Hyper-V role detected
+
+CPU: total 4 (initial active 4) (4 cores per cpu, 1 threads per core) family 6 model 94 stepping 3 microcode 0xcc, cx8, cmov, fxsr, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, fma, vzeroupper, clflush, clflushopt, hv, rdtscp, f16c
+Processor Information for the first 4 processors :
+  Max Mhz: 2701, Current Mhz: 2701, Mhz Limit: 2701
+
+Memory: 4k page, system-wide physical 16296M (2766M free)
+TotalPageFile size 24296M (AvailPageFile size 34M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 307M
+
+vm_info: OpenJDK 64-Bit Server VM (21.0.9+-14649483-b1163.86) for windows-amd64 JRE (21.0.9+-14649483-b1163.86), built on 2025-12-30T22:08:35Z by "builder" with MS VC++ 16.10 / 16.11 (VS2019)
+
+END.
